@@ -1,6 +1,7 @@
 "use strict";
 app.controller('TodoCtrl', ['$scope', 'todoService', function($scope, todoService){
 
+	$scope.items = todoService.items;
 	$scope.toDo = todoService.toDo;
 
 	$scope.showingCompleted = true;
@@ -28,5 +29,9 @@ app.controller('TodoCtrl', ['$scope', 'todoService', function($scope, todoServic
 	$scope.hideCompleted = function(){
 		$scope.showingCompleted = false;
 	};
+
+	$scope.changeOrder = function() {
+		return $scope.orderBy
+	}
 
 }]);
