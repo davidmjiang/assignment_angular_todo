@@ -4,19 +4,33 @@
 	<title>Angulat Todo</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-	<script src="app.js"></script>
+	<script src="javascripts/app.js"></script>
 </head>
 <body>
+	<form>
+		<label>Task</label>
+		<input type="text" ng-model="toDo.text">
+
+		<label>Due Date</label>
+		<input type="date" ng-model="toDo.dueDate">
+		<input type="submit" value="Create To-Do" ng-click="createToDo()">
+	</form>
+
+	<button ng-click="clearCompleted()">Clear Completed Tasks</button>
+	<button ng-click="showCompleted()">Show Completed Tasks</button>
+
 	<table>
 		<tr>
 			<th>To-Do</th>
 			<th>Date</th>
 			<th>Completed</th>
+			<th>Delete</th>
 		</tr>
 		<tr ng-repeat="item in items">
 			<td>{{item.text}}</td>
 			<td>{{item.dueDate | date}}</td>
-			<td>{{item.completed}}</td>
+			<td><input type="checkbox" ng-click="changeCompleted(item)"></td>
+			<td><a ng-click="deleteItem(item)">X</a></td>
 		</tr>
 	</table>
 </body>
