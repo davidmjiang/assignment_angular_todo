@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="todo" ng-controller="TodoCtrl">
+<head>
+	<title>Angulat Todo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>To-Do</th>
+			<th>Date</th>
+			<th>Completed</th>
+		</tr>
+		<tr ng-repeat="item in items">
+			<td>{{item.text}}</td>
+			<td>{{item.dueDate | date}}</td>
+			<td>{{item.completed}}</td>
+		</tr>
+	</table>
+</body>
+</html>
