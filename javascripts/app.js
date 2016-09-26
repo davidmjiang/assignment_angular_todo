@@ -50,9 +50,7 @@ app.controller('TodoCtrl', ['$scope', function($scope){
 
 	$scope.hideCompleted = function(){
 		$scope.showingCompleted = false;
-	}; 
+	};
 
 }]);
-	app.directive = ("toDoItem", function(){
-		
-	})
+

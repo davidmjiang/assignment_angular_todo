@@ -1,0 +1,8 @@
+<tr ng-repeat="item in items" ng-if="showingCompleted || !item.completed">
+
+  <td>{{item.text}}</td>
+  <td>{{item.dueDate | date}}</td>
+  <td ng-if="item.completed"><input type="checkbox" checked ng-click="changeCompleted(item)"></td>
+  <td ng-if="!item.completed"><input type="checkbox" ng-click="changeCompleted(item)"></td>
+  <td><a ng-click="deleteItem(item)">X</a></td>
+</tr>
